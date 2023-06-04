@@ -45,6 +45,12 @@ bool MagicalContainer::Iterator::operator>(const Iterator &otherIt) const
 
     if (this->it_ == nullptr && otherIt.it_ == nullptr)
         return false;
+    
+    if (this->it_ == nullptr)
+        return true;
+
+    if (otherIt.it_ == nullptr)
+        return false;
 
     if (this->it_->getData() > otherIt.it_->getData())
         return true;
